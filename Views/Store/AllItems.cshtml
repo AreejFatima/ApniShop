@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ApniShop_A3.Models.Item>
+
+@{
+    ViewData["Title"] = "AllItems";
+}
+
+<h1> Search Results</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemName)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Maker.MakerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.ImgUrl)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Maker.MakerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImgUrl)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+

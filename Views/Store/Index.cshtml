@@ -1,0 +1,18 @@
+﻿@model IEnumerable<ApniShop_A3.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Search Category</h1>
+
+<p>
+    Select from @Model.Count()
+    categories:
+</p>
+<ul>
+    @foreach (var cat in Model)
+            {
+                <li>@Html.ActionLink(cat.CategoryName,"Browse",new { category= cat.CategoryName})</li>
+            }
+</ul>

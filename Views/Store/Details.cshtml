@@ -1,0 +1,52 @@
+﻿@model ApniShop_A3.Models.Item
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@*<h1>Details</h1>
+
+<div>
+    <h4>Item</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ItemID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ItemID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ItemName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ItemName)
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>*@
+<p>
+    <img alt="@Model.ItemID"
+         src="@Model.ImgUrl" />
+</p>
+<div id="item-details">
+    <p>
+        <em>Category:</em>
+        @Model.Category.CategoryName
+    </p>
+    <p>
+        <em>Maker:</em>
+        @Model.Maker.MakerName
+    </p>
+    <p>
+        <em>Price:</em>
+        @String.Format("{0:F}",
+Model.Price)
+    </p>
+    <p class="button1">
+        @Html.ActionLink("Buy", "Buy", new { id = Model.ItemID }, "")
+    </p>
+    <div class="fb-comments" data-width="230" data-numposts="5"></div>
+</div>

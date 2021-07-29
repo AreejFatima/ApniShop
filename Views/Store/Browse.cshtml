@@ -1,0 +1,18 @@
+﻿@model ApniShop_A3.Models.Category
+@{
+    ViewData["Title"] = "Browse";
+}
+
+<h2>Browsing Category: @Model.CategoryName</h2>
+
+<h1>Search for Item</h1>
+
+
+<hr />
+
+<ul>
+    @foreach (var item in Model.Items)
+    {
+        <li>@Html.ActionLink(item.ItemName, "Details", new { id = item.ItemID })</li>
+    }
+</ul>
